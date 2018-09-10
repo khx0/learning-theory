@@ -3,7 +3,7 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2018-05-29
+# date: 2018-09-10
 # file: test_entropy.py
 ##########################################################################################
 
@@ -65,6 +65,11 @@ class entropy_test(unittest.TestCase):
         probs = np.array([0.0, 0.5, 0.5])
         entropy = getSampleEntropy(probs)
         refEntropy = 1.0
+        self.assertTrue(np.isclose(entropy, refEntropy))
+        
+        probs = np.array([1.0/3.0, 1.0/3.0, 1.0/3.0])
+        entropy = getSampleEntropy(probs)
+        refEntropy = 1.584962501
         self.assertTrue(np.isclose(entropy, refEntropy))
         
         return None
