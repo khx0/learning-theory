@@ -70,6 +70,7 @@ class entropy_test(unittest.TestCase):
         probs = np.array([1.0/3.0, 1.0/3.0, 1.0/3.0])
         entropy = getSampleEntropy(probs)
         refEntropy = 1.584962501
+        # entropy H(X) = -3 * 1/3 * log_2(1/3) = 1.584962501
         self.assertTrue(np.isclose(entropy, refEntropy))
         
         return None
