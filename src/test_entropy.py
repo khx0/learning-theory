@@ -80,13 +80,32 @@ class entropy_test(unittest.TestCase):
         
     def test_pmf_norm_01(self):
         
-        mu = 1.0
         xVals = np.arange(0, 30, 1)
+        
+        mu = 0.0
         yVals = poisson.pmf(xVals, mu)
         assert xVals.shape == yVals.shape, "Error: Shape assertion failed."
-        
         norm = checkPMFnorm(yVals, 'Poisson dist with mu = %.2f' %(mu))
+        self.assertTrue(np.isclose(norm, 1.0))
         
+        mu = 1.0
+        yVals = poisson.pmf(xVals, mu)
+        assert xVals.shape == yVals.shape, "Error: Shape assertion failed."
+        norm = checkPMFnorm(yVals, 'Poisson dist with mu = %.2f' %(mu))
+        self.assertTrue(np.isclose(norm, 1.0))
+    
+        xVals = np.arange(0, 50, 1)
+    
+        mu = 5.0
+        yVals = poisson.pmf(xVals, mu)
+        assert xVals.shape == yVals.shape, "Error: Shape assertion failed."
+        norm = checkPMFnorm(yVals, 'Poisson dist with mu = %.2f' %(mu))
+        self.assertTrue(np.isclose(norm, 1.0))
+        
+        mu = 9.0
+        yVals = poisson.pmf(xVals, mu)
+        assert xVals.shape == yVals.shape, "Error: Shape assertion failed."
+        norm = checkPMFnorm(yVals, 'Poisson dist with mu = %.2f' %(mu))
         self.assertTrue(np.isclose(norm, 1.0))
         
         return None
