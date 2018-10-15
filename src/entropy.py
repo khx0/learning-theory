@@ -20,6 +20,7 @@ def checkPMFnorm(PMF, textString = '', verbose = False):
         print textString + " distribution seems NOT to be normalized to 1."
         if (verbose):
             sys.exit(1)
+    return norm
 
 def checkPDFnorm(PDF, xGrid, textString = '', verbose = False):
     '''
@@ -31,6 +32,7 @@ def checkPDFnorm(PDF, xGrid, textString = '', verbose = False):
         print(textString + " distribution seems NOT to be normalized to 1.")
         if (verbose):
             sys.exit(1)
+    return norm
                         
 def getSampleEntropy(sample):
     entropy = 0.0
