@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 ##########################################################################################
 # author: Nikolas Schnellbaecher
-# contact: nikolas.schnellbaecher@bioquant.uni-heidelberg.de
+# contact: khx0@posteo.net
 # date: 2018-10-15
 # file: entropy.py
 # tested with python 2.7.15
