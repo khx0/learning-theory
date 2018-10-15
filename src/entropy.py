@@ -15,9 +15,9 @@ def checkPMFnorm(PMF, textString = '', verbose = False):
     Checks for proper normalization of a given probability mass function (PMF).
     '''
     norm = np.sum(PMF)
-    print "norm(" + textString + ") =", norm
+    print("norm(" + textString + ") =", norm)
     if (not np.isclose(norm, 1.0)):
-        print textString + " distribution seems NOT to be normalized to 1."
+        print(textString + " distribution seems NOT to be normalized to 1.")
         if (verbose):
             sys.exit(1)
     return norm
